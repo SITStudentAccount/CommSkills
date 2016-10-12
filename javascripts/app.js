@@ -390,12 +390,6 @@ $('a[href*=#]:not([href=#])').click(function() {
 });
 
 
-$(window).load(function() {
-   $(".btn-nav").on("click tap", function() {
-     $(".nav-container").toggleClass("showNav hideNav").removeClass("hidden");
-     $(this).toggleClass("animated");
-   });
- });
 
 
 //Initialize google map for contact setion with your location.
