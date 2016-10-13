@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CommSkills</title>
-
+<head>
       <!-- Load Roboto font
       <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'> 
 	  -->
@@ -27,7 +27,16 @@
       <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57.png">
       <link rel="shortcut icon" href="images/ico/favicon.ico">
 
+	  <!-- jQuery -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
+		<!-- Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+		<!-- Firechat -->
+		<link rel="stylesheet" href="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.css" />
+		<script src="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.js"></script>
+	  
 
 </head>
 
@@ -45,12 +54,18 @@
                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                <i class="icon-menu"></i>
                </button>
-               <!-- Main navigation -->
-   
+               <!-- Main navigation 
+			   
+				<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">
+					ChatRoom
+				</button>-->
+				<div style="float:right;">
+					<img src="images/Chat-PNG-HD.png" height="58" width="58" data-toggle="modal" data-target="#myModal2">
+				</div>	
                <!-- End main navigation -->
             </div>
 			
-	
+			
          </div>
       </div>
 
@@ -137,6 +152,64 @@
 
 
   </div>
+  
+  <!-- Modal -->
+	<div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel2">Chat Room</h4>
+				</div>
+
+				<div class="modal-body">
+					<div id="firechat-wrapper"></div>
+					<script type="text/javascript">
+					  // Initialize Firebase SDK
+					  var config = {
+						apiKey: "AIzaSyDOl9P1XEPMvI4bUAtm9A8S34m9upfUZIo",
+						authDomain: "ict3001-bb85a.firebaseapp.com",
+						databaseURL: "https://ict3001-bb85a.firebaseio.com"
+					  };
+					  firebase.initializeApp(config);
+					  // Get a reference to the Firebase Realtime Database
+					  var chatRef = firebase.database().ref();
+					  // Create an instance of Firechat
+					  var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+					  // Listen for authentication state changes
+					  firebase.auth().onAuthStateChanged(function(user) {
+						if (user) {
+						  // If the user is logged in, set them as the Firechat user
+						  chat.setUser(user.uid, "Anonymous" + user.uid.substr(10, 8));
+						} else {
+						  // If the user is not logged in, sign them in anonymously
+						  firebase.auth().signInAnonymously().catch(function(error) {
+							console.log("Error signing user in anonymously:", error);
+						  });
+						}
+					  });
+					</script>
+					
+					<script>
+				  function initChat(user) {
+					// Get a Firebase Database ref
+					var chatRef = firebase.database().ref("chat");
+
+					// Create a Firechat instance
+					var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+
+					// Set the Firechat user
+					chat.setUser(user.uid, user.displayName);
+				  }
+				</script>
+
+				<div id="firechat-wrapper"></div>
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
 
 <!-- Include javascript -->
       <script src="javascripts/jquery.js"></script>
