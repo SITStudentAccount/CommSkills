@@ -1,0 +1,575 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CommSkills</title>
+<head>
+      <!-- Load Roboto font
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'> 
+	  -->
+      <!-- Load css styles -->
+      <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css" />
+      <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-responsive.css" />
+      <link rel="stylesheet" type="text/css" href="stylesheets/style-side.css" />
+      <link rel="stylesheet" type="text/css" href="stylesheets/hand.css" />
+      <link rel="stylesheet" type="text/css" href="stylesheets/pluton.css" />
+      <!--[if IE 7]>
+      //<link rel="stylesheet" type="text/css" href="stylesheets/pluton-ie7.css" />
+      <![endif]-->
+      <link rel="stylesheet" type="text/css" href="stylesheets/jquery.cslider.css" />
+      <link rel="stylesheet" type="text/css" href="stylesheets/jquery.bxslider.css" />
+      <link rel="stylesheet" type="text/css" href="stylesheets/animate.css" />
+      <!-- Fav and touch icons -->
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72.png">
+      <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57.png">
+      <link rel="shortcut icon" href="images/ico/favicon.ico">
+
+	  <!-- jQuery -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+		<!-- Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+		<!-- Firechat -->
+		<link rel="stylesheet" href="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.css" />
+		<script src="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.js"></script>
+	  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#navbar-example">
+
+      <div class="navbar">
+         <div class="navbar-inner">
+            <div class="container">
+               <a href="#" class="brand">
+                  <img src="images/logo.png" width="120" height="40" alt="Logo" />
+                  <!-- This is website logo -->
+               </a>
+               <!-- Navigation button, visible on small resolution -->
+               <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <i class="icon-menu"></i>
+               </button>
+               <!-- Main navigation 
+			   
+				<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">
+					ChatRoom
+				</button>-->
+				<div style="float:right;">
+					<img src="images/Chat-PNG-HD.png" height="58" width="58" data-toggle="modal" data-target="#myModal2">
+				</div>	
+               <!-- End main navigation -->
+            </div>
+			
+			
+         </div>
+      </div>
+
+
+  <div class="wrapper" styles="margin-top:70px;" >
+
+    <nav class="nav__wrapper" id="navbar-example">
+      <ul class="nav">
+
+        <li role="presentation" class="active">
+          <a href="#section1"><span class="nav__counter">01</span></a>
+        </li>
+
+        <li role="presentation">
+          <a href="#section2"><span class="nav__counter">02</span></a>
+        </li>
+
+        <li role="presentation">
+          <a href="#section3"><span class="nav__counter">03</span></a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section4"><span class="nav__counter">04</span></a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section5"><span class="nav__counter">05</span></a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section6"><span class="nav__counter">06</span></a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section7"><span class="nav__counter">07</span></a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section8"><span class="nav__counter">08</span></a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section9"><span class="nav__counter">09</span></a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section10"><span class="nav__counter">10</span></a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section11"><span class="nav__counter">11</span></a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section12"><span class="nav__counter">12</span></a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section13"><span class="nav__counter">13</span></a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section14"><span class="nav__counter">14</span></a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section15"><span class="nav__counter">15</span></a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <section class="section section1" id="section1">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Introduction</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span8 offset2">
+              <ul>
+                <li>Anyone who pays attention to your hand gesture can tell what you are really thinking, felling and intending</li>
+                <li>This topic let you discover how you can use your hands to add substance to support your spoken words</li>
+                <li>How to position your hand to convey authority and dominance as well as openness and submission</li>
+                <li>Become aware of the tell tale signs that the hands finges unconsciously reveal</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section2" id="section2">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Open Palm</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span6 offset2 content">
+              Open hand gesture is a sign of trustworthiness and being non-threaten to others, it a helpful to establishing rapport with another person. When a person shows one or both palm faced up, it is a sign of honesty. 
+            </div>
+          <div class="row-fluid">
+            <div class="span4">
+              Image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section3" id="section3">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Facing Down Palm</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span6 offset2 content">
+              As opposed to up facing palm, downward facing palm demonstrate projecting of power and authority used for giving order. An example is when a person who want another person to conciliation, his/her hands will be facing down.
+            </div>
+          <div class="row-fluid">
+            <div class="span4">
+              Image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section4" id="section4">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Rubbing Palm</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span6 offset2 content">
+              Rubbing palm together signalling a positive expectation. A quick hand rub by another person indicates excitement, pleasure and enthusiasm, while a slow hand rub can indicate crafty that will make you feel uneasy.
+            </div>
+          <div class="row-fluid">
+            <div class="span4">
+              Image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section5" id="section5">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Precise Grip Fingers</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span6 offset2 content">
+              When you want to express something that is accurate, press your fingers and thumb together with your palm facing toward you. This will reinforce your listener that your statement is with precision and accuracy.
+            </div>
+          <div class="row-fluid">
+            <div class="span4">
+              Image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section6" id="section6">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Power Chop</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span6 offset2 content">
+              The power chop gesture conveys clarity and conviction. Your listener will take you seriously, as the gesture shows that you are feeling strong and not going to accept any contractions. 
+            </div>
+          <div class="row-fluid">
+            <div class="span4">
+              Image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section7" id="section7">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Clenched Hands</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span6 offset2 content">
+              <ul>
+                <li>Showing sign of scared, nervous or holding back negative emotion</li>
+                <li>The stronger the emotion the tighter the clench</li>
+                <li>The higher the hand held in clenched position the stronger the negative mood. Example of someone in the meeting clenching his/her hand in front of the face with elbow resting on the table, this indicates sign of holding back</li>
+              </ul>
+            </div>
+          <div class="row-fluid">
+            <div class="span4">
+              Image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section8" id="section8">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Steeple</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span6 offset2 content">
+              <ul>
+                <li>Steeple fingers demonstrates confident attitude</li>
+                <li>The raised steeple, voicing thoughts and opinions when fingers raised in front of chest. Using it judiciously, as it can convey arrogant if take to extreme</li>
+                <li>The lowered steeple, showing signs of interests and ready to respond when listening</li>
+              </ul>
+            </div>
+          <div class="row-fluid">
+            <div class="span4">
+              Image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section9" id="section9">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Hand Shakes</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span6 offset2 content">
+              <b>The Bone Cruncher</b>
+              <ul><li>Overly aggressive attitudes to compensate for ineffectualness</li></ul>
+              <b>The Wet Fish</b>
+              <ul><li>Limp uncommitted handshake show signs of self-important and aloof</li></ul>
+              <b>The Power Shake</b>
+              <ul><li>Giving a handshake with hand facing down. To demonstrate that you are strong and in control</li></ul>
+            </div>
+          <div class="row-fluid">
+            <div class="span4">
+              Image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section10" id="section10">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Hand Shakes</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span6 offset2 content">
+              <b>The Double-hander</b>
+              <ul><li>Portray sincerity and honesty as well as gaining control of the interaction</li></ul>
+              <b>The Left Side Advantage</b>
+              <ul>
+                <li>When taking a photos, chances are the person standing of the right of the other during handshake is perceived as the dominant, as that person hand is in the upper position appear in the photograph</li>
+                <li>To increase the power play, place left hand on the other person back when hand shaking</li>
+                </ul>
+            </div>
+          <div class="row-fluid">
+            <div class="span4">
+              Image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section11" id="section11">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Steeple</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span6 offset2 content">
+              <ul>
+                <li>Steeple fingers demonstrates confident attitude</li>
+                <li>The raised steeple, voicing thoughts and opinions when fingers raised in front of chest. Using it judiciously, as it can convey arrogant if take to extreme</li>
+                <li>The lowered steeple, showing signs of interests and ready to respond when listening</li>
+              </ul>
+            </div>
+          <div class="row-fluid">
+            <div class="span4">
+              Image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section12" id="section12">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Steeple</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span6 offset2 content">
+              <ul>
+                <li>Steeple fingers demonstrates confident attitude</li>
+                <li>The raised steeple, voicing thoughts and opinions when fingers raised in front of chest. Using it judiciously, as it can convey arrogant if take to extreme</li>
+                <li>The lowered steeple, showing signs of interests and ready to respond when listening</li>
+              </ul>
+            </div>
+          <div class="row-fluid">
+            <div class="span4">
+              Image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section13" id="section13">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Steeple</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span6 offset2 content">
+              <ul>
+                <li>Steeple fingers demonstrates confident attitude</li>
+                <li>The raised steeple, voicing thoughts and opinions when fingers raised in front of chest. Using it judiciously, as it can convey arrogant if take to extreme</li>
+                <li>The lowered steeple, showing signs of interests and ready to respond when listening</li>
+              </ul>
+            </div>
+          <div class="row-fluid">
+            <div class="span4">
+              Image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section14" id="section14">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Steeple</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span6 offset2 content">
+              <ul>
+                <li>Steeple fingers demonstrates confident attitude</li>
+                <li>The raised steeple, voicing thoughts and opinions when fingers raised in front of chest. Using it judiciously, as it can convey arrogant if take to extreme</li>
+                <li>The lowered steeple, showing signs of interests and ready to respond when listening</li>
+              </ul>
+            </div>
+          <div class="row-fluid">
+            <div class="span4">
+              Image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section15" id="section15">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span10 offset2">
+              <p class="title">Steeple</p>
+            </div>
+          </div>
+          <div class="row-fluid content">
+            <div class="span6 offset2 content">
+              <ul>
+                <li>Steeple fingers demonstrates confident attitude</li>
+                <li>The raised steeple, voicing thoughts and opinions when fingers raised in front of chest. Using it judiciously, as it can convey arrogant if take to extreme</li>
+                <li>The lowered steeple, showing signs of interests and ready to respond when listening</li>
+              </ul>
+            </div>
+          <div class="row-fluid">
+            <div class="span4">
+              Image
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+  
+  <!-- Modal -->
+	<div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel2">Chat Room</h4>
+				</div>
+
+				<div class="modal-body">
+					<div id="firechat-wrapper"></div>
+					<script type="text/javascript">
+					  // Initialize Firebase SDK
+					  var config = {
+						apiKey: "AIzaSyDOl9P1XEPMvI4bUAtm9A8S34m9upfUZIo",
+						authDomain: "ict3001-bb85a.firebaseapp.com",
+						databaseURL: "https://ict3001-bb85a.firebaseio.com"
+					  };
+					  firebase.initializeApp(config);
+					  // Get a reference to the Firebase Realtime Database
+					  var chatRef = firebase.database().ref();
+					  // Create an instance of Firechat
+					  var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+					  // Listen for authentication state changes
+					  firebase.auth().onAuthStateChanged(function(user) {
+						if (user) {
+						  // If the user is logged in, set them as the Firechat user
+						  chat.setUser(user.uid, "Anonymous" + user.uid.substr(10, 8));
+						} else {
+						  // If the user is not logged in, sign them in anonymously
+						  firebase.auth().signInAnonymously().catch(function(error) {
+							console.log("Error signing user in anonymously:", error);
+						  });
+						}
+					  });
+					</script>
+					
+					<script>
+				  function initChat(user) {
+					// Get a Firebase Database ref
+					var chatRef = firebase.database().ref("chat");
+
+					// Create a Firechat instance
+					var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+
+					// Set the Firechat user
+					chat.setUser(user.uid, user.displayName);
+				  }
+				</script>
+
+				<div id="firechat-wrapper"></div>
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
+
+<!-- Include javascript -->
+      <script src="javascripts/jquery.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.mixitup.js"></script>
+      <script type="text/javascript" src="javascripts/bootstrap.js"></script>
+      <script type="text/javascript" src="javascripts/modernizr.custom.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.bxslider.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.cslider.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.placeholder.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.inview.js"></script>
+      <!-- Load google maps api and call initializeMap function defined in app.js -->
+      <script async="" defer="" type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initializeMap"></script>
+      <!-- css3-mediaqueries.js for IE8 or older -->
+      <!--[if lt IE 9]>
+      <script src="javascripts/respond.min.js"></script>
+      <![endif]-->
+      <script type="text/javascript" src="javascripts/app.js"></script>
+</body>
+</html>
