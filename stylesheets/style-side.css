@@ -2,7 +2,7 @@
   min-height: 100vh;
   font-family: 'Roboto Slab', serif;
   font-weight: 300;
-  color: #fff;
+  color:	#000000;
   position: relative;
 }
 
@@ -10,7 +10,7 @@ section {
   height: 100vh;
   font-size: 40px;
   font-weight: 100;
-  background-color: #22A7F0;
+  background-color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -24,6 +24,7 @@ section {
       -ms-flex-align: center;
           align-items: center;
 }
+/**
 section:nth-child(1) {
   background: white;
 }
@@ -45,8 +46,9 @@ section:nth-child(6) {
 section:nth-child(7) {
   background: #ffcc00;
 }
+**/
 .navbar {
-    background: #181A1C;
+    background: #000000;
     margin-bottom:0;
     min-height:70px;
 }
@@ -57,7 +59,7 @@ section:nth-child(7) {
     padding-top:0;
 }
 .navbar-inner {
-    background: #181A1C;
+    background: 	#000000;
     border-radius:0;
     filter: none;
     border: none;
@@ -78,13 +80,13 @@ section:nth-child(7) {
     box-shadow: none;
     font-size:15px;
     text-shadow: none;
-    color: #fff;
+    color: #000000;
     transition: border-color 1s ease;
 }
 .navbar .nav > li:hover> a, .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
     border: 1px solid #FECE1A;
-    color: #fff;
-    background-color: #181A1C;
+    color: 	#000000;
+    background-color: 	#000000;
     transition: border-color 1s ease;
 }
 .nav-pills {
@@ -98,11 +100,11 @@ section:nth-child(7) {
     margin-right:5px;
     padding-left:25px;
     padding-right:25px;
-    border: 1px solid #181A1C;
+    border: 1px solid 	#000000;
 }
 .nav-pills > li > a:hover, .nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
     background: #181A1C;
-    color: #fff;
+    color: #000000;
 }
 .navbar .btn-navbar:hover, .navbar .btn-navbar {
     border-radius:0;
@@ -164,8 +166,8 @@ section:nth-child(7) {
 .nav li:after {
   content: '';
   display: block;
-  border-left: 2px solid white;
-  border-top: 2px solid white;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
   height: 250px;
   width: 20px;
   position: absolute;
@@ -175,7 +177,7 @@ section:nth-child(7) {
 .nav li a {
   display: block;
   padding: 0;
-  color: #fff;
+  color: #000000;
   -webkit-transition: all 0.15s ease-out;
   transition: all 0.15s ease-out;
 }
