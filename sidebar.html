@@ -20,6 +20,7 @@
       <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css" />
       <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-responsive.css" />
       <link rel="stylesheet" type="text/css" href="stylesheets/style-side.css" />
+	  <link rel="stylesheet" type="text/css" href="stylesheets/firebasechat.css" />
       <link rel="stylesheet" type="text/css" href="stylesheets/pluton.css" />
       <!--[if IE 7]>
       //<link rel="stylesheet" type="text/css" href="stylesheets/pluton-ie7.css" />
@@ -43,6 +44,9 @@
 		<!-- Firechat -->
 		<link rel="stylesheet" href="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.css" />
 		<script src="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.js"></script>
+		
+		<!--<script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>-->
 	  
 
 </head>
@@ -234,7 +238,7 @@
 
     <section class="section section2" id="section2">
       <img class="displayed" src="images/FacialExpression/Introduction.jpg" alt="Introduction" style="width:900px;height:550px;">
-    </section>
+	</section>
 
     <section class="section section3" id="section3">
       <img class="displayed" src="images/FacialExpression/EffectsOfFacial.jpg" alt="EffectsOfFacial" style="width:900px;height:550px;">
@@ -322,7 +326,23 @@
 
 				<div class="modal-body">
 					<div id="firechat-wrapper"></div>
+					<div class="example-chat l-demo-container">
+					  <header>Facial Expression</header>
+
+					  <div class='example-chat-toolbar'>
+						<label for="nameInput">Username:</label>
+						<input type='text' id='nameInput' placeholder='enter a username...'>
+					  </div>
+
+					  <ul id='example-messages' class="example-chat-messages"></ul>
+
+					  <footer>
+						<input type='text' id='messageInput'  placeholder='Type a message...'>
+					  </footer>
+					</div>
+					<!--
 					<script type="text/javascript">
+					
 					  // Initialize Firebase SDK
 					  var config = {
 						apiKey: "AIzaSyDOl9P1XEPMvI4bUAtm9A8S34m9upfUZIo",
@@ -360,7 +380,7 @@
 					chat.setUser(user.uid, user.displayName);
 				  }
 				</script>
-
+				-->
 				<div id="firechat-wrapper"></div>
 				</div>
 
