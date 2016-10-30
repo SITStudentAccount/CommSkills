@@ -146,49 +146,6 @@
 });
 
     /*
-    Sand newsletter
-    **********************************************************************/
-    $('#subscribe').click(function () {
-        var error = false;
-        var emailCompare = /^([a-z0-9_.-]+)@([0-9a-z.-]+).([a-z.]{2,6})$/; // Syntax to compare against input
-        var email = $('input#nlmail').val().toLowerCase(); // get the value of the input field
-        if (email == "" || email == " " || !emailCompare.test(email)) {
-            $('#err-subscribe').show(500);
-            $('#err-subscribe').delay(4000);
-            $('#err-subscribe').animate({
-                height: 'toggle'
-            }, 500, function () {
-                // Animation complete.
-            });
-            error = true; // change the error state to true
-        }
-
-        if (error === false) {
-            $.ajax({
-                type: 'POST',
-                url: 'php/newsletter.php',
-
-                data: {
-                    email: $('#nlmail').val()
-                },
-                error: function (request, error) {
-                    alert("An error occurred");
-                },
-                success: function (response) {
-                    if (response == 'OK') {
-                        $('#success-subscribe').show();
-                        $('#nlmail').val('')
-                    } else {
-                        alert("An error occurred");
-                    }
-                }
-            });
-        }
-
-        return false;
-    });
-
-    /*
 Sand mail
 **********************************************************************/
 $("#send-mail").click(function () {
@@ -390,43 +347,5 @@ $('a[href*=#]:not([href=#])').click(function() {
 });
 
 
-
-
-//Initialize google map for contact setion with your location.
-
-function initializeMap() {
-
-    var lat = '44.8164056'; //Set your latitude.
-    var lon = '20.46090424'; //Set your longitude.
-
-    var centerLon = lon - 0.0105;
-
-    var myOptions = {
-        scrollwheel: false,
-        draggable: false,
-        disableDefaultUI: true,
-        center: new google.maps.LatLng(lat, centerLon),
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-
-    //Bind map to elemet with id map-canvas
-    var map = new google.maps.Map(document.getElementById('map-canvas'), myOptions);
-    var marker = new google.maps.Marker({
-        map: map,
-        position: new google.maps.LatLng(lat, lon),
-
-    });
-
-    var infowindow = new google.maps.InfoWindow({
-        content: "Your content goes here!"
-    });
-
-    google.maps.event.addListener(marker, 'click', function () {
-        infowindow.open(map, marker);
-    });
-
-    infowindow.open(map, marker);
-}
 
 

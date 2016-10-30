@@ -68,6 +68,7 @@ section:nth-child(7) {
 }
 
 .wrapper {
+  position:fixed;
   font-family: 'Roboto Slab', serif;
   font-weight: 300;
   color:	#000000;
