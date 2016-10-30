@@ -1,16 +1,23 @@
 .title{
-  font-size: 50px;
-  font-weight: bold;
+  font-size: 44px;
+  font-weight: 700;
   line-height: 120%;
   padding: 5px;
 }
 
 .content{
-  font-size: 26px;
+  font-size: 24px;
+  font-weight: 300;
   line-height: 150%;
   padding: 5px;
 }
 
+.content b{
+  font-weight: 400;
+}
+
 .content ul li{
-  line-height: 150%;
+  font-weight: 300;
+  padding-bottom: 18px;
+  line-height: 130%;
 }
