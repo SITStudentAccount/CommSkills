@@ -1,4 +1,5 @@
 .title{
+  font-family: 'Roboto Slab', serif;
   font-size: 44px;
   font-weight: 700;
   line-height: 120%;
@@ -6,6 +7,7 @@
 }
 
 .content{
+  font-family: 'Roboto Slab', serif;
   font-size: 24px;
   font-weight: 300;
   line-height: 150%;
@@ -13,10 +15,12 @@
 }
 
 .content b{
+  font-family: 'Roboto Slab', serif;
   font-weight: 400;
 }
 
 .content ul li{
+  font-family: 'Roboto Slab', serif;
   font-weight: 300;
   padding-bottom: 18px;
   line-height: 130%;
