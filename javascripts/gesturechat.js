@@ -3,7 +3,9 @@
 var config = {
 	apiKey: "AIzaSyDOl9P1XEPMvI4bUAtm9A8S34m9upfUZIo",
 	authDomain: "ict3001-bb85a.firebaseapp.com",
-	databaseURL: "https://ict3001-bb85a.firebaseio.com"
+	databaseURL: "https://ict3001-bb85a.firebaseio.com",
+    storageBucket: "ict3001-bb85a.appspot.com",
+    messagingSenderId: "597329719830"
 };
 firebase.initializeApp(config);
 					  

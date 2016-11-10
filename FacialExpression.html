@@ -39,7 +39,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 		<!-- Firebase -->
-		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
 
 		<!-- Firechat -->
 		<link rel="stylesheet" href="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.css" />
@@ -322,47 +322,7 @@
 						<input type='text' id='messageInput'  placeholder='Type a message...'>
 					  </footer>
 					</div>
-					<!--
-					<script type="text/javascript">
 					
-					  // Initialize Firebase SDK
-					  var config = {
-						apiKey: "AIzaSyDOl9P1XEPMvI4bUAtm9A8S34m9upfUZIo",
-						authDomain: "ict3001-bb85a.firebaseapp.com",
-						databaseURL: "https://ict3001-bb85a.firebaseio.com"
-					  };
-					  firebase.initializeApp(config);
-					  // Get a reference to the Firebase Realtime Database
-					  var chatRef = firebase.database().ref();
-					  // Create an instance of Firechat
-					  var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
-					  // Listen for authentication state changes
-					  firebase.auth().onAuthStateChanged(function(user) {
-						if (user) {
-						  // If the user is logged in, set them as the Firechat user
-						  chat.setUser(user.uid, "Anonymous" + user.uid.substr(10, 8));
-						} else {
-						  // If the user is not logged in, sign them in anonymously
-						  firebase.auth().signInAnonymously().catch(function(error) {
-							console.log("Error signing user in anonymously:", error);
-						  });
-						}
-					  });
-					</script>
-					
-					<script>
-				  function initChat(user) {
-					// Get a Firebase Database ref
-					var chatRef = firebase.database().ref("chat");
-
-					// Create a Firechat instance
-					var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
-
-					// Set the Firechat user
-					chat.setUser(user.uid, user.displayName);
-				  }
-				</script>
-				-->
 				<div id="firechat-wrapper"></div>
 				</div>
 
