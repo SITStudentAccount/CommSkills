@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CommSkills</title>
+<head>
+		<style>
+			IMG.displayed {
+				position: absolute;
+				right: 0px;
+			}
+
+		</style>
+      <!-- Load Roboto font
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'> 
+	  -->
+      <!-- Load css styles -->
+      <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css" />
+      <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-responsive.css" />
+      <link rel="stylesheet" type="text/css" href="stylesheets/style-side.css" />
+	  <link rel="stylesheet" type="text/css" href="stylesheets/firebasechat.css" />
+      <link rel="stylesheet" type="text/css" href="stylesheets/pluton.css" />
+      <!--[if IE 7]>
+      //<link rel="stylesheet" type="text/css" href="stylesheets/pluton-ie7.css" />
+      <![endif]-->
+      <link rel="stylesheet" type="text/css" href="stylesheets/jquery.cslider.css" />
+      <link rel="stylesheet" type="text/css" href="stylesheets/jquery.bxslider.css" />
+      <link rel="stylesheet" type="text/css" href="stylesheets/animate.css" />
+      <!-- Fav and touch icons -->
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72.png">
+      <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57.png">
+      <link rel="shortcut icon" href="images/ico/favicon.ico">
+
+	  <!-- jQuery -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+		<!-- Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+		<!-- Firechat -->
+		<link rel="stylesheet" href="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.css" />
+		<script src="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.js"></script>
+		
+		<!--<script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>-->
+	  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#navbar-example">
+
+      <div class="navbar">
+         <div class="navbar-inner">
+            <div class="container">
+               <a href="#" class="brand">
+                  <IMG src="images/logo.png" width="90" height="30" alt="Logo" />
+                  <!-- This is website logo -->
+               </a>
+               <!-- Navigation button, visible on small resolution -->
+               <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <i class="icon-menu"></i>
+               </button>
+               <!-- Main navigation 
+			   
+				<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">
+					ChatRoom
+				</button>-->
+				<div style="float:right;">
+					<img src="images/Chat-PNG-HD.png" height="38" width="38" data-toggle="modal" data-target="#myModal2">
+				</div>	
+               <!-- End main navigation -->
+            </div>
+         </div>
+      </div>
+
+
+  <div class="wrapper">
+    <nav class="nav__wrapper" id="navbar-example">
+      <ul class="nav">
+
+        <li role="presentation" class="active">
+          <a href="#section1">
+            <span class="nav__counter">01</span>
+            <h3 class="nav__title">Learning Objectives</h3>
+            
+          </a>
+        </li>
+
+        <li role="presentation">
+          <a href="#section2">
+            <span class="nav__counter">02</span>
+            <h3 class="nav__title">Introduction</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li>
+
+        <li role="presentation">
+          <a href="#section3">
+            <span class="nav__counter">03</span>
+            <h3 class="nav__title">Effects of Reading Facial Expression</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section4">
+            <span class="nav__counter">04</span>
+            <h3 class="nav__title">Learning to Read Faces and Facial Expression</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section5">
+            <span class="nav__counter">05</span>
+            <h3 class="nav__title">Types Expression</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li>
+        
+        <li role="presentation">
+          <a href="#section6">
+            <span class="nav__counter">06</span>
+            <h3 class="nav__title">Happiness</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li>
+		
+		<li role="presentation">
+          <a href="#section7">
+            <span class="nav__counter">07</span>
+            <h3 class="nav__title">Sadness</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li>
+		<li role="presentation">
+          <a href="#section8">
+            <span class="nav__counter">08</span>
+            <h3 class="nav__title">Contempt</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li>
+		<li role="presentation">
+          <a href="#section9">
+            <span class="nav__counter">09</span>
+            <h3 class="nav__title">Disgust</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li><li role="presentation">
+          <a href="#section10">
+            <span class="nav__counter">10</span>
+            <h3 class="nav__title">Surprise</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li><li role="presentation">
+          <a href="#section11">
+            <span class="nav__counter">11</span>
+            <h3 class="nav__title">Fear</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li><li role="presentation">
+          <a href="#section12">
+            <span class="nav__counter">12</span>
+            <h3 class="nav__title">Anger</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li><li role="presentation">
+          <a href="#section13">
+            <span class="nav__counter">13</span>
+            <h3 class="nav__title">Learning MicroExpression</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li><li role="presentation">
+          <a href="#section14">
+            <span class="nav__counter">14</span>
+            <h3 class="nav__title">Seven MicroExpression</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li>
+		</li><li role="presentation">
+          <a href="#section15">
+            <span class="nav__counter">15</span>
+            <h3 class="nav__title">MicroExpression vs MacroExpression</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li>
+		</li><li role="presentation">
+          <a href="#section16">
+            <span class="nav__counter">16</span>
+            <h3 class="nav__title">Culture Differences</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li>
+		</li><li role="presentation">
+          <a href="#section17">
+            <span class="nav__counter">17</span>
+            <h3 class="nav__title">Emoticons</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li>
+		</li><li role="presentation">
+          <a href="#section18">
+            <span class="nav__counter">18</span>
+            <h3 class="nav__title">Exercise</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li>
+		</li><li role="presentation">
+          <a href="#section19">
+            <span class="nav__counter">19</span>
+            <h3 class="nav__title">Eye Reading</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li>
+		</li><li role="presentation">
+          <a href="#section20">
+            <span class="nav__counter">20</span>
+            <h3 class="nav__title">Summary</h3>
+            <p class="nav__body">Sed sit amet justo sed odio tempus tempus. Vestibulum sed varius mi, sit amet condimentum lacus.</p>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <section class="section section1" id="section1">
+      <img class="displayed" src="images/FacialExpression/LearningObjectives.jpg" alt="LearningObjectives" style="width:900px;height:550px;">
+    </section>
+
+    <section class="section section2" id="section2">
+      <img class="displayed" src="images/FacialExpression/Introduction.jpg" alt="Introduction" style="width:900px;height:550px;">
+	</section>
+
+    <section class="section section3" id="section3">
+      <img class="displayed" src="images/FacialExpression/EffectsOfFacial.jpg" alt="EffectsOfFacial" style="width:900px;height:550px;">
+    </section>
+
+    <section class="section section4" id="section4">
+      <img class="displayed" src="images/FacialExpression/Learning Facial.jpg" alt="Learning Facial" style="width:900px;height:550px;">
+    </section>
+
+    <section class="section section5" id="section5">
+      <img class="displayed" src="images/FacialExpression/7Facial.jpg" alt="7Facial" style="width:900px;height:550px;">
+    </section>
+
+    <section class="section section6" id="section6">
+      <img class="displayed" src="images/FacialExpression/Happiness.jpg" alt="Happiness" style="width:900px;height:550px;">
+    </section>
+
+	<section class="section section7" id="section7">
+      <img class="displayed" src="images/FacialExpression/Saddness.jpg" alt="Saddness" style="width:900px;height:550px;">
+    </section>
+
+    <section class="section section8" id="section8">
+      <img class="displayed" src="images/FacialExpression/Contempt.jpg" alt="Contempt" style="width:900px;height:550px;">
+    </section>
+
+    <section class="section section9" id="section9">
+      <img class="displayed" src="images/FacialExpression/Digust.jpg" alt="Digust" style="width:900px;height:550px;">
+    </section>
+
+    <section class="section section10" id="section10">
+      <img class="displayed" src="images/FacialExpression/Surprise.jpg" alt="Surprise" style="width:900px;height:550px;">
+    </section>
+
+    <section class="section section11" id="section11">
+      <img class="displayed" src="images/FacialExpression/Fear.jpg" alt="Fear" style="width:900px;height:550px;">
+    </section>
+
+    <section class="section section12" id="section12">
+      <img class="displayed" src="images/FacialExpression/Anger.jpg" alt="Anger" style="width:900px;height:550px;">
+    </section>
+
+	<section class="section section13" id="section13">
+      <img class="displayed" src="images/FacialExpression/MicroExpression.jpg" alt="MicroExpression" style="width:900px;height:550px;">
+    </section>
+	
+	<section class="section section14" id="section14">
+      <img class="displayed" src="images/FacialExpression/7MicroExpression.jpg" alt="7MicroExpression" style="width:900px;height:550px;">
+    </section>
+	
+	<section class="section section15" id="section15">
+      <img class="displayed" src="images/FacialExpression/macrovsmicro.jpg" alt="macrovsmicro" style="width:900px;height:550px;">
+    </section>
+	
+	<section class="section section16" id="section16">
+      <img class="displayed" src="images/FacialExpression/CultureDifferences.jpg" alt="CultureDifferences" style="width:900px;height:550px;">
+    </section>
+	
+	<section class="section section17" id="section17">
+      <img class="displayed" src="images/FacialExpression/emoicon.jpg" alt="emoicon" style="width:900px;height:550px;">
+    </section>
+	
+	<section class="section section18" id="section18">
+      Exercise
+	  <iframe width="560" height="315" src="https://www.youtube.com/embed/HVqhaibmw3E" frameborder="0" allowfullscreen></iframe>
+    </section>
+	
+	<section class="section section19" id="section19">
+      <img class="displayed" src="images/FacialExpression/EyeReading.jpg" alt="EyeReading" style="width:900px;height:550px;">
+    </section>
+	
+	<section class="section section20" id="section20">
+      <img class="displayed" src="images/FacialExpression/Summary.jpg" alt="Summary" style="width:900px;height:550px;">
+    </section>
+  </div>
+  
+  <!-- Modal -->
+	<div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel2">Facial Expression</h4>
+				</div>
+
+				<div class="modal-body">
+					<div id="firechat-wrapper"></div>
+					<div class="example-chat l-demo-container">
+					  <header>chat room</header>
+
+					  <div class='example-chat-toolbar'>
+						<label for="nameInput">Username:</label>
+						<input type='text' id='nameInput' placeholder='enter a username...'>
+					  </div>
+
+					  <ul id='example-messages' class="example-chat-messages"></ul>
+
+					  <footer>
+						<input type='text' id='messageInput'  placeholder='Type a message...'>
+					  </footer>
+					</div>
+					<!--
+					<script type="text/javascript">
+					
+					  // Initialize Firebase SDK
+					  var config = {
+						apiKey: "AIzaSyDOl9P1XEPMvI4bUAtm9A8S34m9upfUZIo",
+						authDomain: "ict3001-bb85a.firebaseapp.com",
+						databaseURL: "https://ict3001-bb85a.firebaseio.com"
+					  };
+					  firebase.initializeApp(config);
+					  // Get a reference to the Firebase Realtime Database
+					  var chatRef = firebase.database().ref();
+					  // Create an instance of Firechat
+					  var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+					  // Listen for authentication state changes
+					  firebase.auth().onAuthStateChanged(function(user) {
+						if (user) {
+						  // If the user is logged in, set them as the Firechat user
+						  chat.setUser(user.uid, "Anonymous" + user.uid.substr(10, 8));
+						} else {
+						  // If the user is not logged in, sign them in anonymously
+						  firebase.auth().signInAnonymously().catch(function(error) {
+							console.log("Error signing user in anonymously:", error);
+						  });
+						}
+					  });
+					</script>
+					
+					<script>
+				  function initChat(user) {
+					// Get a Firebase Database ref
+					var chatRef = firebase.database().ref("chat");
+
+					// Create a Firechat instance
+					var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+
+					// Set the Firechat user
+					chat.setUser(user.uid, user.displayName);
+				  }
+				</script>
+				-->
+				<div id="firechat-wrapper"></div>
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
+
+<!-- Include javascript -->
+      <script src="javascripts/jquery.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.mixitup.js"></script>
+      <script type="text/javascript" src="javascripts/bootstrap.js"></script>
+      <script type="text/javascript" src="javascripts/modernizr.custom.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.bxslider.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.cslider.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.placeholder.js"></script>
+      <script type="text/javascript" src="javascripts/jquery.inview.js"></script>
+      <!-- css3-mediaqueries.js for IE8 or older -->
+      <!--[if lt IE 9]>
+      <script src="javascripts/respond.min.js"></script>
+      <![endif]-->
+      <script type="text/javascript" src="javascripts/app-side.js"></script>
+	  <script type="text/javascript" src="javascripts/facialexpressionchat.js"></script>
+</body>
+</html>
