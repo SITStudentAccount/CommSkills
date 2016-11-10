@@ -27,12 +27,6 @@
 /*
 1. General
 **********************************************************************/
-html.noscroll {
-    position: fixed; 
-    overflow-y: scroll;
-    width: 100%;
-}
-
  body {
     font-family:'Roboto', sans-serif;
     color: #FFF;
@@ -802,6 +796,7 @@ p {
 ********************************************************************/
  .footer {
     background: #181A1C;
+    text-align: center;
 }
 .footer > p {
     color: #fff;
