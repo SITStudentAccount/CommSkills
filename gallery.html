@@ -35,15 +35,8 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 		<!-- Firebase -->
-		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
 
-		<!-- Firechat -->
-		<link rel="stylesheet" href="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.css" />
-		<script src="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.js"></script>
-		
-		
-		<!--<script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
-		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>-->
 		
 		<!----webfonts---->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -96,7 +89,7 @@
 	
 	<div class="row">
 	<section class="polaroid-container">
-<div class="polaroid-images">
+<div class="polaroid-images"  id="polo">
 	<a href="" title="Cave"><img height="200" width="150" src="images/Chop.png" alt="Cave" title="Cave" /></a>
 	<a href="" title="Island"><img height="200" src="images/Chop.png" alt="Island" title="Island" /></a>
 	<a href="" title="Islands Forest"><img height="200" src="images/Chop.png" alt="Islands Forest" title="Islands Forest" /></a>
@@ -123,6 +116,7 @@
 					  
     var auth = firebase.auth();
     var storageRef = firebase.storage().ref();
+	var galleryRef = firebase.database().ref().child("Gallery");
     function handleFileSelect(evt) {
       evt.stopPropagation();
       evt.preventDefault();
@@ -130,9 +124,7 @@
 
       var metadata = {
         'contentType': file.type,
-		'customMetadata':{
-			'rating':0
-		}
+		
       };
 	
       // Push to child path.
@@ -142,13 +134,16 @@
         console.log('Uploaded', snapshot.totalBytes, 'bytes.');
         console.log(snapshot.metadata);
         var url = snapshot.metadata.downloadURLs[0];
+		galleryRef.push({'url':url, 'rating':0});
         console.log('File available at', url);
+		alert("upload successful");
         // [START_EXCLUDE]
 		document.getElementById('linkbox').innerHTML = '<a href="' +  url + '">Click For File</a>';
         // [END_EXCLUDE]
       }).catch(function(error) {
         // [START onfailure]
         console.error('Upload failed:', error);
+		alert("upload failed");
         // [END onfailure]
       });
       // [END oncomplete]
@@ -172,15 +167,22 @@
   
 <script>
 
-var tangRef = storageRef.child('images');
-var div = document.createElement("div")
-div.append('<img src="https://firebasestorage.googleapis.com/v0/b/ict3001-bb85a.appspot.com/o/images%2FChain.jpg?alt=media&amp;token=9c79129a-2be5-48bd-9635-c02ef0b88934" width="523" height="327">');
-	
-tangRef.getDownloadURL().then(function(url){
-  document.querySelector('img').src = url;
-}).catch(function(error) {
-  console.error(error);
+galleryRef.orderByChild('rating').startAt(0).limitToLast(100).on("value", function(snapshot) {
+	snapshot.forEach(function(childSnapshot) {
+     
+      // childData will be the actual contents of the child
+      var childData = childSnapshot.val();
+	  
+	  console.log(childData.url);
+	  console.log(childData.rating);
+  });
+
+
 });
+
+var polaroid = document.getElementById("polo");
+polaroid.innerHTML=polaroid.innerHTML+'<a href="" title="popo"><img height="200" src="images/Chop.png" alt="Coast Valley" title="asd" /></a>'
+
 </script>
   
  
@@ -197,6 +199,5 @@ tangRef.getDownloadURL().then(function(url){
       <!--[if lt IE 9]>
       <script src="javascripts/respond.min.js"></script>
       <![endif]-->
-	  <script type="text/javascript" src="javascripts/facialexpressionchat.js"></script>
 </body>
 </html>
