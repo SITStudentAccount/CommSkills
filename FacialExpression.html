@@ -1,390 +1,635 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CommSkills</title>
-<head>
-		<style>
-			IMG.displayed {
-				position: absolute;
-				right: 0px;
-			}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Facial Expression</title>
 
-		</style>
-      <!-- Load Roboto font
-      <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'> 
-	  -->
-      <!-- Load css styles -->
-      <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css" />
-      <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-responsive.css" />
-      <link rel="stylesheet" type="text/css" href="stylesheets/lessoncss.css" />
-	  <link rel="stylesheet" type="text/css" href="stylesheets/firebasechat.css" />
-      <link rel="stylesheet" type="text/css" href="stylesheets/pluton.css" />
-      <!--[if IE 7]>
-      //<link rel="stylesheet" type="text/css" href="stylesheets/pluton-ie7.css" />
-      <![endif]-->
-      <link rel="stylesheet" type="text/css" href="stylesheets/jquery.cslider.css" />
-      <link rel="stylesheet" type="text/css" href="stylesheets/jquery.bxslider.css" />
-      <link rel="stylesheet" type="text/css" href="stylesheets/animate.css" />
-      <!-- Fav and touch icons -->
-      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144.png">
-      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72.png">
-      <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57.png">
-      <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <style>
+        IMG.displayed {
+            position: absolute;
+            right: 0px;
+        }
+    </style>
 
-	  <!-- jQuery -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- Load css styles -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/lessonstyles.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/jquery.cslider.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/jquery.bxslider.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/animate.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/lessoncss.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/firebasechat.css" />
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
 
-		<!-- Firebase -->
-		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-		<!-- Firechat -->
-		<link rel="stylesheet" href="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.css" />
-		<script src="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.js"></script>
-		
-		<!--<script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
-		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>-->
-	  
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
 
+    <!-- Firechat -->
+    <link rel="stylesheet" href="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.css" />
+    <script src="https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.js"></script>
 </head>
+
 
 
 <body data-spy="scroll" data-target="#navbar-example">
 
+    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+    <label for="nav-trigger"></label>
 
-	  
-<ul class="navigation" style="margin: 0 0 10px; overflow:auto;">
-	<li class="nav-item"><a href="#1">01.Introduction</a></li>
-	<li class="nav-item"><a href="#2">02.Learning Objective</a></li>
-	<li class="nav-item"><a href="#3">03.Effects of Reading Facial Expression</a></li>
-	<li class="nav-item"><a href="#4">04.Learning to Read Faces and Facial Expression</a></li>
-	<li class="nav-item"><a href="#5">05.Types Expression</a></li>
-	<li class="nav-item"><a href="#6">06.Happiness</a></li>
-	<li class="nav-item"><a href="#7">07.Sadness</a></li>
-	<li class="nav-item"><a href="#8">08.Contempt</a></li>
-	<li class="nav-item"><a href="#9">09.Disgust</a></li>
-	<li class="nav-item"><a href="#10">10.Surprise</a></li>
-	<li class="nav-item"><a href="#11">11.Fear</a></li>
-	<li class="nav-item"><a href="#12">12.Anger</a></li>
-	<li class="nav-item"><a href="#13">13.Learning MicroExpression</a></li>
-	<li class="nav-item"><a href="#14">14.Seven MicroExpression</a></li>
-    <li class="nav-item"><a href="#15">15.MicroExpression vs MacroExpression</a></li>
-	<li class="nav-item"><a href="#16">16.Culture Differences</a></li>
-	<li class="nav-item"><a href="#17">17.Emoticons</a></li>
-	<li class="nav-item"><a href="#18">18.Exercise</a></li>
-	<li class="nav-item"><a href="#19">19.Eye Reading</a></li>
-	<li class="nav-item"><a href="#20">20.Summary</a></li>
-	<li class="nav-item"><a href="#21">21.Quiz</a></li>
-</ul>
+    <ul class="navigation" style="margin: 0 0 10px; overflow:auto;">
+        <li class="nav-item"><a href="#1">01.Introduction</a></li>
+        <li class="nav-item"><a href="#2">02.Learning Objective</a></li>
+        <li class="nav-item"><a href="#3">03.Effects of Reading Facial Expression</a></li>
+        <li class="nav-item"><a href="#4">04.Learning to Read Faces and Facial Expression</a></li>
+        <li class="nav-item"><a href="#5">05.Types Expression</a></li>
+        <li class="nav-item"><a href="#6">06.Happiness</a></li>
+        <li class="nav-item"><a href="#7">07.Sadness</a></li>
+        <li class="nav-item"><a href="#8">08.Contempt</a></li>
+        <li class="nav-item"><a href="#9">09.Disgust</a></li>
+        <li class="nav-item"><a href="#10">10.Surprise</a></li>
+        <li class="nav-item"><a href="#11">11.Fear</a></li>
+        <li class="nav-item"><a href="#12">12.Anger</a></li>
+        <li class="nav-item"><a href="#13">13.Learning MicroExpression</a></li>
+        <li class="nav-item"><a href="#14">14.Seven MicroExpression</a></li>
+        <li class="nav-item"><a href="#15">15.MicroExpression vs MacroExpression</a></li>
+        <li class="nav-item"><a href="#16">16.Culture Differences</a></li>
+        <li class="nav-item"><a href="#17">17.Emoticons</a></li>
+        <li class="nav-item"><a href="#19">18.Eye Reading</a></li>
+        <li class="nav-item"><a href="#20">19.Summary</a></li>
+        <li class="nav-item"><a href="#21">20.Quiz</a></li>
+    </ul>
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger"></label>
 
-<div class="site-wrap">
-	      <div class="navbar">
-         <div class="navbar-inner">
-            <div class="container">
-               <a href="#" class="brand">
-                  <IMG src="images/logo.png" width="90" height="30" alt="Logo" />
-                  <!-- This is website logo -->
-               </a>
-               <!-- Navigation button, visible on small resolution -->
-               <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-               <i class="icon-menu"></i>
-               </button>
-               <!-- Main navigation 
-			   
-				<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">
-					ChatRoom
-				</button>-->
-				<div style="float:right;">
-					<img src="images/Chat-PNG-HD.png" height="38" width="38" data-toggle="modal" data-target="#myModal2">
-				</div>	
-               <!-- End main navigation -->
+    <div class="site-wrap">
+        <div class="header">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <a href="#" class="brand">
+                            <IMG src="images/logo.png" width="90" height="30" alt="Logo" />
+                            <!-- This is website logo -->
+                        </a>
+                        <!-- Navigation button, visible on small resolution -->
+                        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		   <i class="icon-menu"></i>
+		   </button>
+                        <!-- Main navigation 
+		   
+			<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">
+				ChatRoom
+			</button>-->
+                        <div style="float:right;">
+                            <img src="images/Chat-PNG-HD.png" height="38" width="38" data-toggle="modal" data-target="#myModal2">
+                        </div>
+                        <!-- End main navigation -->
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-	<section id="1" style="background-color:#0ABFBC">
-			<div class="centered">
-			<p style="margin-top:5%">Introduction Facial Expression</p>
-			<p style="text-align:justify;line-height: 100%;">
-				Facial expression is integral when expressing emotions through the body. Combinations of eyes, eyebrow, lips, nose, and cheek movements help form different moods of an individual (e.g. happy, sad, depressed, angry, etc.). It is vital to social communication between humans.
-			</p>
-	
-			<iframe style="border: 3px solid #EEE;" width="720" height="420" align="center" src="https://www.youtube.com/embed/bOMeY6t24oo" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <section id="1" style="background: url(images/banner.jpg) no-repeat;">
+            <div id="video-feature-block" class="feature-block video-feature-block">
+                <div class="video-feature-inner container">
+                    <div class="animate-block content-block-inner text-center">
+                        <h2 class="feature-block-heading">Introduction Facial Expression</h2>
+                        <div class="col-10-l no-float center">
+                            <p>
+                                Facial expression is integral when expressing emotions through the body. Combinations of eyes, eyebrow, lips, nose, and cheek movements help form different moods of an individual (e.g. happy, sad, depressed, angry, etc.). It is vital to social communication between humans.
+                            </p>
+                            <iframe style="border: 3px solid #EEE;" width="720" height="420" align="center" src="https://www.youtube.com/embed/bOMeY6t24oo" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="2" style="background-color:#219AD7">
+			<div class="container">
+                <h1 class="banner-lead">
+                    <span class="banner-lead-1">Learning Objective</span>
+                </h1>
+                <div class="banner-content col-8-m no-float-m">
+					<p>1. Introduction to Facial Expression
+					</p>
+					<p>2. Effects of Reading Facial Expression
+					</p>
+					<p>3. Identifying  Different Facial Expression
+					</p>
+					<p>4. Identifying Different Micro Expression
+					</p>
+					<p>5. Eye Reading
+					</p>
+					<p>6. Application 
+					</p>
+                </div>
+            </div>		
+        </section>
+        <section id="3" style="background-color:#0ABFBC">
+            <div id="news" class="animate-block content-block news-block">
+                <div class="news-block-inner container">
+
+                    <div class="animate-block news-list clear">
+                        <div class="news-list-left col-12-l no-padding-1">
+                            <div class="news-item news-item-secondary clear">
+                                <a class="news-item-image col-6-l no-padding-1">
+                                    <img style="width: 100%;" class="block img-fluid" src="images/FacialExpression/3.jpg" alt="N">
+                                </a>
+                                <div class="news-item-content col-6-l no-padding-l">
+                                    <div class="news-item-content-inner">
+                                        <h3 class="news-item-title uppercase">Effects of Reading Facial Expression</h3>
+                                        <p>
+                                            Recognizing how other people feel serves as a major social asset. Whether you accurately interpret a quick glance from a partner, or you notice your neighbour's disinterest in hearing your story, perceiving other people’s emotions correctly improves communication.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="4" style="background-color:#219AD7">
+			<div class="container">
+                <h1 class="banner-lead">
+                    <span class="banner-lead-1">Learning to Read</span>
+                    <span class="banner-lead-2">Faces and Facial Expression</span>
+                </h1>
+                <div class="banner-content col-8-m no-float-m">
+					<p>1. Facial expressions of certain emotions were universal.
+					</p>
+					<p>2. Facial expressions reliably associated certain emotional states.
+					</p>
+                </div>
+            </div>
+        </section>
+        <section id="5" style="background-color:#0ABFBC">
+
+            <div class="services-block-inner container">
+                <div class="content-block-inner text-center">
+                    <h2 class="uppercase pad-bottom-20">7 Major Types of Facial Expression</h2>
+                    <div class="col-10-l no-float center">
+                        <p>
+                            A facial expression is motions and positions of the muscles on the face.These motions and positions can be translated to the emotional state of an individual. Facial expressions are a form of nonverbal communication and are a primary means of conveying social information.
+                        </p>
+                    </div>
+                </div>
+                <ul class="services-list clear">
+                    <li class="service-item col-6 col-3-m">
+                        <h3 class="service-item-heading service-icon service-icon-happy">Happiness</h3>
+                        <p>Mental or emotional state of well-being defined by positive or pleasant emotions</p>
+                    </li>
+                    <li class="service-item col-6 col-3-m">
+                        <h3 class="service-item-heading service-icon service-icon-sad">Sadness</h3>
+                        <p>Emotional pain associated with feelings of loss, despair, grief, helplessness, disappointment and sorrow.</p>
+                    </li>
+                    <li class="service-item col-6 col-3-m">
+                        <h3 class="service-item-heading service-icon service-icon-contempt">Contempt</h3>
+                        <p>Feeling of disliking and having no respect for someone or something</p>
+                    </li>
+                    <li class="service-item col-6 col-3-m">
+                        <h3 class="service-item-heading service-icon service-icon-disgust">Disgust</h3>
+                        <p>Feeling of revulsion or strong disapproval aroused by something unpleasant or offensive</p>
+                    </li>
+                    <li class="service-item col-6 col-4-m">
+                        <h3 class="service-item-heading service-icon service-icon-surprise">Surprise</h3>
+                        <p>Feeling caused by something unexpected happening</p>
+                    </li>
+                    <li class="service-item col-6 col-4-m">
+                        <h3 class="service-item-heading service-icon service-icon-fear">Fear</h3>
+                        <p>Unpleasant mental or emotional state caused by the threat of danger, pain, or harm</p>
+                    </li>
+                    <li class="service-item col-6 col-4-m">
+                        <h3 class="service-item-heading service-icon service-icon-anger">Anger</h3>
+                        <p>Intense mental or emotional state involves a strong uncomfortable and emotional response to a perceived provocation, hurt or threat</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="6" style="background-color:#219AD7">
+            <div class="container">
+                <div class="banner-inner">
+                    <h1 class="banner-lead">
+                        <span class="banner-lead-1">Learning to Read</span>
+                        <span class="banner-lead-2">Happiness</span>
+                    </h1>
+                    <div class="banner-content col-8-m no-float-m">
+                        <p>
+                            1. A face expressing happiness or joy will feature a smile (corners of the mouth drawn up and back) with some teeth exposed, and a wrinkle runs from the outer nose to the outer corners of the lip.
+                        </p>
+                        <p>
+                            2. The cheeks are raised, and the lower eyelids are tense or wrinkled.
+                        </p>
+                        <p>
+                            3. The narrowing of the eyelids causes “crow’s feet” wrinkles at the outer corners of the eyes.
+                        </p>
+                    </div>
+                </div>
+                <div id="video-feature-block" class="feature-block video-feature-block">
+                    <div class="video-feature-inner container">
+                        <div class="animate-block content-block-inner text-center">
+                            <a id="video" class="button button-play" href="#feature-video"><span class="sr">Play</span></a>
+                            <h2 class="feature-block-heading">Happiness in Poker Game!</h2>
+                            <div class="col-10-l no-float center">
+                                <p>
+                                    Fun Fact : A face that is smiling but does not involve the muscles in the eyes indicates a fake smile or polite smile that is not actual happiness or joy.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal" id="feature-video">
+                            <a href="#6" class="modal-close"><span class="sr">Close</span></a>
+                            <div class="modal-inner">
+                                <iframe style="border: 3px solid #EEE;" width="720" height="420" align="center" src="https://www.youtube.com/embed/bOMeY6t24oo" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="7" style="background-color:#0ABFBC">
+            <div class="container">
+                <h1 class="banner-lead">
+                    <span class="banner-lead-1">Learning to Read</span>
+                    <span class="banner-lead-2">Sadness</span>
+                </h1>
+                <div class="banner-content col-8-m no-float-m">
+                    <p>
+                        1. Face showing sadness has the eyebrows drawn in and up.
+                    </p>
+                    <p>
+                        2. The skin below the eyebrows is triangulated with the inner corner up.
+                    </p>
+                    <p>
+                        3. The corners of the lips are turned down.
+                    </p>
+                    <p>
+                        4. The jaw comes up and the bottom lip pouts out.
+                    </p>
+                </div>
+                <div id="video-feature-block" class="feature-block video-feature-block">
+                    <div class="video-feature-inner container">
+                        <div class="animate-block content-block-inner text-center">
+                            <a id="video" class="button button-play" href="#feature-video"><span class="sr">Play</span></a>
+                            <h2 class="feature-block-heading">Sadness in Poker Game!</h2>
+                            <div class="col-10-l no-float center">
+                                <p>Fun Fact : Studies show that this emotion is the hardest expression to fake.
+                                    <p>
+                            </div>
+                        </div>
+                        <div class="modal" id="feature-video">
+                            <a href="#7" class="modal-close"><span class="sr">Close</span></a>
+                            <div class="modal-inner">
+                                <iframe style="border: 3px solid #EEE;" width="720" height="420" align="center" src="https://www.youtube.com/embed/bOMeY6t24oo" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="8" style="background-color:#219AD7">
+            <div class="container">
+                <h1 class="banner-lead">
+                    <span class="banner-lead-1">Learning to Read</span>
+                    <span class="banner-lead-2">Contempt</span>
+                </h1>
+                <div class="banner-content col-8-m no-float-m">
+                    <p>
+                        A face showing contempt, or hate, has one corner of the mouth rising, like a sort of half-smile which is actually a sneer.
+                    </p>
+                </div>
+                <div id="video-feature-block" class="feature-block video-feature-block">
+                    <div class="video-feature-inner container">
+                        <div class="animate-block content-block-inner text-center">
+                            <a id="video" class="button button-play" href="#feature-video"><span class="sr">Play</span></a>
+                            <h2 class="feature-block-heading">Contempt in Poker Game!</h2>
+                        </div>
+                        <div class="modal" id="feature-video">
+                            <a href="#8" class="modal-close"><span class="sr">Close</span></a>
+                            <div class="modal-inner">
+                                <iframe style="border: 3px solid #EEE;" width="720" height="420" align="center" src="https://www.youtube.com/embed/bOMeY6t24oo" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="9" style="background-color:#0ABFBC">
+            <div class="container">
+                <h1 class="banner-lead">
+                    <span class="banner-lead-1">Learning to Read</span>
+                    <span class="banner-lead-2">Disgust</span>
+                </h1>
+                <div class="banner-content col-8-m no-float-m">
+                    <p>
+                        1. A disgusted face has the eyebrows downcast, but
+                    </p>
+                    <p>
+                        2. The lower eyelid raised (causing the eyes to narrow)
+                    </p>
+                    <p>
+                        3. The cheeks are raised and the nose is scrunched.
+                    </p>
+                    <p>
+                        4. The upper lip is also raised or curled upward.
+                    </p>
+                </div>
+                <div id="video-feature-block" class="feature-block video-feature-block">
+                    <div class="video-feature-inner container">
+                        <div class="animate-block content-block-inner text-center">
+                            <a id="video" class="button button-play" href="#feature-video"><span class="sr">Play</span></a>
+                            <h2 class="feature-block-heading">Disgust in Poker Game!</h2>
+                        </div>
+                        <div class="modal" id="feature-video">
+                            <a href="#9" class="modal-close"><span class="sr">Close</span></a>
+                            <div class="modal-inner">
+                                <iframe style="border: 3px solid #EEE;" width="720" height="420" align="center" src="https://www.youtube.com/embed/bOMeY6t24oo" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="10" style="background-color:#219AD7">
+            <div class="container">
+                <h1 class="banner-lead">
+                    <span class="banner-lead-1">Learning to Read</span>
+                    <span class="banner-lead-2">Surprise</span>
+                </h1>
+                <div class="banner-content col-8-m no-float-m">
+                    <p>1. The skin below the brow is stretched and there are horizontal wrinkles across the forehead.</p>
+                    <p>2. A surprised face features the eyebrows raised up and curved.</p>
+                    <p>3. The eyelids are so wide open that the whites are showing above and/or below the pupils.</p>
+                    <p>4. there’s no stretching or tension of the mouth.</p>
+                    <p>5. The jaw is dropped and teeth are slightly parted.</p>
+                </div>
+                <div id="video-feature-block" class="feature-block video-feature-block">
+                    <div class="video-feature-inner container">
+                        <div class="animate-block content-block-inner text-center">
+                            <a id="video" class="button button-play" href="#feature-video"><span class="sr">Play</span></a>
+                            <h2 class="feature-block-heading">Surprise in Poker Game!</h2>
+                        </div>
+                        <div class="modal" id="feature-video">
+                            <a href="#10" class="modal-close"><span class="sr">Close</span></a>
+                            <div class="modal-inner">
+                                <iframe style="border: 3px solid #EEE;" width="720" height="420" align="center" src="https://www.youtube.com/embed/bOMeY6t24oo" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="11" style="background-color:#0ABFBC">
+            <div class="container">
+                <h1 class="banner-lead">
+                    <span class="banner-lead-1">Learning to Read</span>
+                    <span class="banner-lead-2">Fear</span>
+                </h1>
+                <div class="banner-content col-8-m no-float-m">
+                    <p>1. There are wrinkles in the forehead in the center between the brows, not across.</p>
+                    <p>2. A face showing fear has raised eyebrows that are usually more flat, not curved.</p>
+                    <p>3. The upper eyelids are raised.</font>
+                    </p>
+                    <p>4. Lower eyelids are tense and drawn up, usually causing whites to show in the upper eye but not lower.</p>
+                    <p>5. Nostrils may be flared.</font>
+                    </p>
+                    <p>6. The lips are usually tensed or drawn back, the mouth may be open.</p>
+                </div>
+                <div id="video-feature-block" class="feature-block video-feature-block">
+                    <div class="video-feature-inner container">
+                        <div class="animate-block content-block-inner text-center">
+                            <a id="video" class="button button-play" href="#feature-video"><span class="sr">Play</span></a>
+                            <h2 class="feature-block-heading">Fear in Poker Game!</h2>
+                        </div>
+                        <div class="modal" id="feature-video">
+                            <a href="#11" class="modal-close"><span class="sr">Close</span></a>
+                            <div class="modal-inner">
+                                <iframe style="border: 3px solid #EEE;" width="720" height="420" align="center" src="https://www.youtube.com/embed/bOMeY6t24oo" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="12" style="background-color:#219AD7">
+            <div class="container">
+                <h1 class="banner-lead">
+                    <span class="banner-lead-1">Learning to Read</span>
+                    <span class="banner-lead-2">Sadness</span>
+                </h1>
+                <div class="banner-content col-8-m no-float-m">
+                    <p>1. An angry face will show eyebrows that are lowered and drawn together.</p>
+                    <p>2. Eyes staring hard or bulging, with vertical lines appearing between the brows and the lower eyelids tensed.</p>
+                    <p>3. Nostrils may be flared, and </p>
+                    <p>4. Mouth is either firmly pressed together with the lips drawn down at the corners, or in a square shape as if shouting.</p>
+                    <p>5. Lower jaw juts out.</p>
+                </div>
+                <div id="video-feature-block" class="feature-block video-feature-block">
+                    <div class="video-feature-inner container">
+                        <div class="animate-block content-block-inner text-center">
+                            <a id="video" class="button button-play" href="#feature-video"><span class="sr">Play</span></a>
+                            <h2 class="feature-block-heading">Sadness in Poker Game!</h2>
+                        </div>
+                        <div class="modal" id="feature-video">
+                            <a href="#12" class="modal-close"><span class="sr">Close</span></a>
+                            <div class="modal-inner">
+                                <iframe style="border: 3px solid #EEE;" width="720" height="420" align="center" src="https://www.youtube.com/embed/bOMeY6t24oo" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="13" style="background-color:#0ABFBC">
+				<div id="contact" class="animate-block content-block contact-block">
+		  <div class="contact-block-inner container">
+			<div class="clear">
+			  <div class="contact-block-content col-12-m">
+				<h2 class="fs-2 heading">Learning to MircoExpression</h2>
+                <p>
+                    A microexpression is a shortened version of an emotional facial expression. They go on and off the face in a fraction of a second, sometimes 1/30 of a second. They happen so fast that if you blink you can miss them.
+                </p>
+                <p>
+                    Microexpressions are usually the sign of concealed emotions. Sometimes the emotions are not necessarily being concealed, they are just rapidly processed.
+                </p>
+                <p>
+                    Research suggests that micro expressions happen because facial expressions cannot be completely voluntarily controlled, even if the person is trying to control their emotions. There are two neural pathways in the brain that mediates facial expressions, and they enter into a type of “tug of war” over the face when someone is in an intensely emotional situation but is trying to conceal their feelings
+                </p>
+                <p>
+                    A microexpression is a brief, involuntary facial expression that is shown on the face of humans according to the emotions that are being experienced. Unlike regular pro-longed facial expressions, it is difficult to fake a microexpression.
+                </p>
+			  </div>
 			</div>
-	</section>
-	<section id="2" style="background-color:#219AD7">
-	</section>
-	<section id="3" style="background-color:#0ABFBC">
-		<div class="col-md-6">
-			<h2>Effects of Reading</h2>
-			<h4>Facial Expression</h4>
-			<p><font size="4">Recognizing how other people feel serves as a major social asset. Whether you accurately interpret a quick glance from
-			a partner, or you notice your neighbour's disinterest in hearing your story, perceiving other people’s emotions correctly improves communication.</font></p>
+		  </div>
 		</div>
-		<div class="col-md-6">
-			<img src="images/FacialExpression/3.jpg" height="100%" width="100%">
+        </section>
+        <section id="14" style="background-color:#219AD7">
+            <div id="news" class="animate-block content-block news-block">
+                <div class="news-block-inner container">
+                    <div class="animate-block news-list clear">
+                        <div class="news-list-left col-12-l no-padding-1">
+                            <div class="news-item news-item-secondary clear">
+                                <a class="news-item-image col-6-l no-padding-1">
+                                    <img style="width: 100%;" class="block img-fluid" src="images/sevenmicro.png" alt="sevenmicro">
+                                </a>
+                                <div class="news-item-content col-6-l no-padding-l">
+                                    <div class="news-item-content-inner">
+                                        <h3 class="news-item-title uppercase">Seven Type of Micro Expression</h3>
+                                        <p>
+                                            There are seven universal micro expressions: disgust, anger, fear, sadness, happiness, surprise, and contempt. They often occur as fast as 1/15 to 1/25 of a second.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="15" style="background-color:#0ABFBC">
+
+            <div id="news" class="animate-block content-block news-block">
+                <div class="news-block-inner container">
+                    <div class="content-block-inner text-center">
+                        <h2 class="uppercase pad-bottom-20">Micro Expression Vs Macro Expression</h2>
+
+                    </div>
+                    <div class="animate-block news-list clear">
+                        <div class="news-list-left col-12-l no-padding-l">
+                            <div class="news-item clear">
+                                <a class="news-item-image col-7-l no-padding-l">
+                                    <img class="block img-fluid" src="img/news-item-01.jpg" alt="News Item 01">
+                                </a>
+                                <div class="news-item-content col-5-l no-padding-l">
+                                    <div class="news-item-content-inner">
+                                        <h3 class="news-item-title uppercase">Micro expression</h3>
+                                        <p>
+                                            Last less than ½ second: they occur when people are consciously or unconsciously trying to conceal or repress what they are feeling.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-item news-item-secondary clear">
+                                <a class="news-item-image col-7-l no-padding-l">
+                                    <img class="block img-fluid" src="img/news-item-02.jpg" alt="News Item 02">
+                                </a>
+                                <div class="news-item-content col-5-l no-padding-l">
+                                    <div class="news-item-content-inner">
+                                        <h3 class="news-item-title uppercase">Marco Expression</h3>
+                                        <p>
+                                            Typically last from ½ second to 4 seconds: We see them in our daily interactions with people all of the time.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="16" style="background-color:#219AD7">
+		<div id="contact" class="animate-block content-block contact-block">
+		  <div class="contact-block-inner container">
+			<div class="clear">
+			  <div class="contact-block-content col-12-m">
+				<h2 class="fs-2 heading">Cultural Differences</h2>
+                <p>
+                    While facial expressions have been deemed the “universal language of emotion”.
+                </p>
+                <p>
+                    Different cultures may actually interpret happy, sad, and angry facial expression in unique ways.
+                </p>
+                <p>
+                    According to studies, Asian cultures rely more on the eyes when interpreting a facial expression, but Western cultures rely more on the eyebrows and mouth.
+                </p>
+                <p>
+                    This can sometimes lead to missed cues or misinterpreted signals during cross-cultural communication. Furthermore, it has been suggested that Asian cultures actually associate different fundamental emotions, such as pride and shame, with certain expressions instead of the seven major Western emotions.
+                </p>
+			  </div>
+			</div>
+		  </div>
 		</div>
-	</section>
-	<section id="4" style="background-color:#219AD7">
-		<div class="col-md-6">
-			<h2>Learning to Read</h2>
-			<h4>Faces and Facial Expression</h4>
-			<p><font size="4">1.Facial expressions of certain emotions were universal.</font></p>
-			<p><font size="4">2.Facial expressions reliably associated certain emotional states.</font></p>
+        </section>
+        <section id="17" style="background-color:#0ABFBC">
+			<div id="news" class="animate-block content-block news-block">
+                <div class="news-block-inner container">
+
+                    <div class="animate-block news-list clear">
+                        <div class="news-list-left col-12-l no-padding-1">
+                            <div class="news-item news-item-secondary clear">
+                                <a class="news-item-image col-6-l no-padding-1">
+                                    <img style="width: 100%;" class="block img-fluid" src="images/emote.png" alt="N">
+                                </a>
+                                <div class="news-item-content col-6-l no-padding-l">
+                                    <div class="news-item-content-inner">
+                                        <h3 class="news-item-title uppercase">Use in Everyday life ~Emoticons</h3>
+                                        <p>
+                                           Facial expression are a physical expression of our emotions.
+                                        </p>
+										<p>
+                                           Emoticons are modelled after facial expression of people. This helps to gets message across easily as it gives the tone of the contextual message being typed.
+                                        </p>										
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="18" style="background-color:#219AD7">
+            <div id="news" class="animate-block content-block news-block">
+                <div class="news-block-inner container">
+                    <div class="animate-block news-list clear">
+                        <div class="news-list-left col-12-l no-padding-1">
+                            <div class="news-item news-item-secondary clear">
+                                <a class="news-item-image col-6-l no-padding-1">
+                                    <img style="width: 100%;" class="block img-fluid" src="images/eyeread.jpg" alt="eyeread">
+                                </a>
+                                <div class="news-item-content col-6-l no-padding-l">
+                                    <div class="news-item-content-inner">
+                                        <h3 class="news-item-title uppercase">Eye Reading</h3>
+                                        <p>
+                                            People say that the eyes are a "window to the soul" - that they can tell us much about a person just by gazing into them. Given that we cannot, for example, control the size of our pupils, body language experts can deduce much of a person's state by factors relating to the eyes.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="19" style="background-color:#0ABFBC">		
+		<div id="contact" class="animate-block content-block contact-block">
+		  <div class="contact-block-inner container">
+			<div class="clear">
+			  <div class="contact-block-content col-12-m">
+				<h2 class="fs-2 heading">Summary</h2>
+                <p>1. Seven Major Facial Expression.
+                </p>
+                <p>2. Marco Expression are facial expression that last longer on people faces and are obvious to see.
+                </p>
+                <p>3. Micro Expression are much difficult to identify as the happen very quickly.
+                </p>
+                <p>4. Eye Reading , such as blinking gives of certain emotions.
+                </p>
+			  </div>
+			</div>
+		  </div>
 		</div>
-	</section>
-	<section id="5" style="background-color:#0ABFBC">
-		<div class="col-md-6">
-			<h2>7 Major</h2>
-			<h4>Types of Facial Expression</h4>
-			<p><font size="4">1.Happiness</font></p>
-			<p><font size="4">2.Sadness</font></p>
-			<p><font size="4">3.Contempt</font></p>
-			<p><font size="4">4.Disgust</font></p>
-			<p><font size="4">5.Surprise</font></p>
-			<p><font size="4">6.Fear</font></p>
-			<p><font size="4">7.Anger</font></p>
-		</div>
-	</section>
-	<section id="6" style="background-color:#219AD7">
-		<div class="col-md-6">
-			<h2>Happiness</h2>
-			<h4>Learning to Read</h4>
-			<p><font size="4">1.A face expressing happiness or joy will feature a smile (corners of the mouth drawn up and back) with some teeth exposed, 
-			and a wrinkle runs from the outer nose to the outer corners of the lip. </font></p>
-			<p><font size="4">2.The cheeks are raised, and the lower eyelids are tense or wrinkled.</font></p>
-			<p><font size="4">3.The narrowing of the eyelids causes “crow’s feet” wrinkles at the outer corners of the eyes.</font></p>
-			<h2>Fun Fact:</h2><p><font size="4">A face that is smiling but does not involve the muscles in the 
-			eyes indicates a fake smile or polite smile that is not actual happiness or joy.</font></p>
-		</div>
-	</section>
-	<section id="7" style="background-color:#0ABFBC">
-		<div class="col-md-6">
-			<h2>Sadness</h2>
-			<h4>Learning to Read</h4>
-			<p><font size="4">1.Face showing sadness has the eyebrows drawn in and up.</font></p>
-			<p><font size="4">2.The skin below the eyebrows is triangulated with the inner corner up.</font></p>
-			<p><font size="4">3.The corners of the lips are turned down.</font></p>
-			<p><font size="4">4.The jaw comes up and the bottom lip pouts out.</font></p>
-			<h2>Fun Fact:</h2><p><font size="4">Studies show that this emotion is the hardest expression to fake.</font></p>
-		</div>
-	</section>
-	<section id="8" style="background-color:#219AD7">
-		<div class="col-md-6">
-			<h2>Contempt</h2>
-			<h4>Learning to Read</h4>
-			<p><font size="4">A face showing contempt, or hate, has one corner of the mouth rising, like a sort of half-smile which is actually a sneer.</font></p>
-		</div>
-	</section>
-	<section id="9" style="background-color:#0ABFBC">
-		<div class="col-md-6">
-			<h2>Disgust</h2>
-			<h4>Learning to Read</h4>
-			<p><font size="4">1.A disgusted face has the eyebrows downcast, but</font></p>
-			<p><font size="4">2.The lower eyelid raised (causing the eyes to narrow)</font></p>
-			<p><font size="4">3.The cheeks are raised and the nose is scrunched.</font></p>
-			<p><font size="4">4.The upper lip is also raised or curled upward.</font></p>
-		</div>
-	</section>
-	<section id="10" style="background-color:#219AD7">
-		<div class="col-md-6">
-			<h2>Surprise</h2>
-			<h4>Learning to Read</h4>
-			<p><font size="4">1.The skin below the brow is stretched and there are horizontal wrinkles across the forehead.</font></p>
-			<p><font size="4">2.A surprised face features the eyebrows raised up and curved.</font></p>
-			<p><font size="4">3.The eyelids are so wide open that the whites are showing above and/or below the pupils.</font></p>
-			<p><font size="4">4.there’s no stretching or tension of the mouth.</font></p>		
-			<p><font size="4">5.The jaw is dropped and teeth are slightly parted.</font></p>
-		</div>
-	</section>
-	<section id="11" style="background-color:#0ABFBC">
-		<div class="col-md-6">
-			<h2>Fear</h2>
-			<h4>Learning to Read</h4>
-			<p><font size="4">1.There are wrinkles in the forehead in the center between the brows, not across.</font></p> 
-			<p><font size="4">2.A face showing fear has raised eyebrows that are usually more flat, not curved.</font></p>
-			<p><font size="4">3.The upper eyelids are raised.</font></p>
-			<p><font size="4">4.Lower eyelids are tense and drawn up, usually causing whites to show in the upper eye but not lower.</font></p>		
-			<p><font size="4">5.Nostrils may be flared.</font></p>
-			<p><font size="4">6.The lips are usually tensed or drawn back, the mouth may be open.</font></p>
-		</div>
-	</section>
-	<section id="12" style="background-color:#219AD7">
-		<div class="col-md-6">
-			<h2>Sadness</h2>
-			<h4>Learning to Read</h4>
-			<p><font size="4">1.An angry face will show eyebrows that are lowered and drawn together.</font></p> 
-			<p><font size="4">2.Eyes staring hard or bulging, with vertical lines appearing between the brows and the lower eyelids tensed.</font></p>
-			<p><font size="4">3.Nostrils may be flared, and </font></p>
-			<p><font size="4">4.Mouth is either firmly pressed together with the lips drawn down at the corners, or in a square shape as if shouting.</font></p>		
-			<p><font size="4">5.Lower jaw juts out.</font></p>
-		</div>
-	</section>
-	<section id="13" style="background-color:#0ABFBC">
-		<div class="col-md-6">
-			<h2>Learning to MircoExpression</h2>
-			<p><font size="4">A microexpression is a shortened version of an emotional facial expression. 
-			They go on and off the face in a fraction of a second, sometimes 1/30 of a second. They happen so fast that if you blink you can miss them.</font></p>
-			<p><font size="4">Microexpressions are usually the sign of concealed emotions. Sometimes the emotions are not necessarily being concealed, they are just rapidly processed.</font></p> 			
-			<p><font size="4">Research suggests that micro expressions happen because facial expressions cannot be completely voluntarily controlled, even if the person is trying to control their emotions. There are two neural pathways in the brain that mediates facial expressions, 
-			and they enter into a type of “tug of war” over the face when someone is in an 
-			intensely emotional situation but is trying to conceal their feelings</font></p>
-			<p><font size="4">A microexpression is a brief, involuntary facial expression that is shown on the face of
-			humans according to the emotions that are being experienced. Unlike regular pro-longed facial expressions, it is difficult to fake a microexpression.</font></p>
-		</div>
-	</section>
-	<section id="14" style="background-color:#219AD7">
-		<div class="col-md-6">
-			<h2>Seven</h2>
-			<h4>Type of Micro Expression</h4>
-			<p><font size="4">There are seven universal micro expressions: disgust, anger, fear, sadness, happiness, surprise, and contempt. They often occur as fast as 1/15 to 1/25 of a second.</font></p>
-		</div>
-	</section>
-	<section id="15" style="background-color:#0ABFBC">
-		<div class="col-md-6">
-			<h2>Micro Expression Vs Macro Expression</h2>
-			<p><font size="4">Micro expression</font></p>
-			<p><font size="4">Last less than ½ second: they occur when people are consciously or unconsciously trying to conceal or repress what they are feeling.</font></p>
-			<p><font size="4">Marco Expression</font></p>
-			<p><font size="4">Typically last from ½ second to 4 seconds: We see them in our daily interactions with people all of the time.</font></p>
-		</div>
-	</section>
-	<section id="16" style="background-color:#219AD7">
-		<div class="col-md-6">
-			<h4>Cultural Differences</h4>
-			<p><font size="4">While facial expressions have been deemed the “universal language of emotion”.</font></p> 
-			<p><font size="4">Different cultures may actually interpret happy, sad, and angry facial expression in unique ways.</font></p>
-			<p><font size="4">According to studies, Asian cultures rely more on the eyes when interpreting a facial expression, but Western cultures rely more on the eyebrows and mouth.</font></p>
-			<p><font size="4">This can sometimes lead to missed cues or misinterpreted signals during cross-cultural communication. Furthermore, 
-			it has been suggested that Asian cultures actually associate different fundamental emotions, such as pride and shame, with certain expressions instead of the seven major Western emotions.</font></p>
-		</div>
-	</section>
-	<section id="17" style="background-color:#0ABFBC">
-		<div class="col-md-6">
-			<h2>Use in Everyday life</h2>
-			<h4>~Emoticons</h4>
-			<p><font size="4">Facial expression are a physical expression of our emotions.</font></p>
-			<p><font size="4">Emoticons are modelled after facial expression of people. This helps to gets message across easily as it gives the tone of the contextual message being typed.</font></p>
-		</div>
-	</section>
-	<section id="18" style="background-color:#0ABFBC">
-	</section>
-	<section id="19" style="background-color:#219AD7">
-		<div class="col-md-6">
-			<h2>Eye Reading</h2>
-			<p><font size="4">People say that the eyes are a "window to the soul" - that they can tell us much about a person just by gazing into them. 
-			Given that we cannot, for example, control the size of our pupils, body language experts can deduce much of a person's state by factors relating to the eyes.</font></p>
-		</div>
-	</section>
-	<section id="20" style="background-color:#0ABFBC">
-		<div class="col-md-6">
-			<h2>Summary</h2>
-			<p><font size="4">1.Seven Major Facial Expression.</font></p> 
-			<p><font size="4">2.Marco Expression are facial expression that last longer on people faces and are obvious to see.</font></p>
-			<p><font size="4">3.Micro Expression are much difficult to identify as the happen very quickly.</font></p>
-			<p><font size="4">4.Eye Reading , such as blinking gives of certain emotions.</font></p>
-		</div>
-	</section>
-	<section id="21" style="background-color:#219AD7">
-		<iframe  width="100%" height="700px" frameborder="0" border="none" src="https://www.boombox.com/widget/quiz/fi9xdWl6emVzLzI4NTY0Ng">
+        </section>
+        <section id="20" style="background-color:#219AD7">
+            <iframe width="100%" height="700px" frameborder="0" border="none" src="https://www.boombox.com/widget/quiz/fi9xdWl6emVzLzI4NTY0Ng">
 		</iframe>
-	</section>
-</div>
-  
-  <!-- Modal -->
-	<div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
+        </section>
+    </div>
+    <script src="js/vendor/wow.js"></script>
+    <script src="js/default.js"></script>
 
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel2">Facial Expression</h4>
-				</div>
-
-				<div class="modal-body">
-					<div id="firechat-wrapper"></div>
-					<div class="example-chat l-demo-container">
-					  <header>chat room</header>
-
-					  <div class='example-chat-toolbar'>
-						<label for="nameInput">Username:</label>
-						<input type='text' id='nameInput' placeholder='enter a username...'>
-					  </div>
-
-					  <ul id='example-messages' class="example-chat-messages"></ul>
-
-					  <footer>
-						<input type='text' id='messageInput'  placeholder='Type a message...'>
-					  </footer>
-					</div>
-					<!--
-					<script type="text/javascript">
-					
-					  // Initialize Firebase SDK
-					  var config = {
-						apiKey: "AIzaSyDOl9P1XEPMvI4bUAtm9A8S34m9upfUZIo",
-						authDomain: "ict3001-bb85a.firebaseapp.com",
-						databaseURL: "https://ict3001-bb85a.firebaseio.com"
-					  };
-					  firebase.initializeApp(config);
-					  // Get a reference to the Firebase Realtime Database
-					  var chatRef = firebase.database().ref();
-					  // Create an instance of Firechat
-					  var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
-					  // Listen for authentication state changes
-					  firebase.auth().onAuthStateChanged(function(user) {
-						if (user) {
-						  // If the user is logged in, set them as the Firechat user
-						  chat.setUser(user.uid, "Anonymous" + user.uid.substr(10, 8));
-						} else {
-						  // If the user is not logged in, sign them in anonymously
-						  firebase.auth().signInAnonymously().catch(function(error) {
-							console.log("Error signing user in anonymously:", error);
-						  });
-						}
-					  });
-					</script>
-					
-					<script>
-				  function initChat(user) {
-					// Get a Firebase Database ref
-					var chatRef = firebase.database().ref("chat");
-
-					// Create a Firechat instance
-					var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
-
-					// Set the Firechat user
-					chat.setUser(user.uid, user.displayName);
-				  }
-				</script>
-				-->
-				<div id="firechat-wrapper"></div>
-				</div>
-
-			</div><!-- modal-content -->
-		</div><!-- modal-dialog -->
-	</div><!-- modal -->
-
-	
-<!-- Include javascript -->
-      <script src="javascripts/jquery.js"></script>
-      <script type="text/javascript" src="javascripts/jquery.mixitup.js"></script>
-      <script type="text/javascript" src="javascripts/bootstrap.js"></script>
-      <script type="text/javascript" src="javascripts/modernizr.custom.js"></script>
-      <script type="text/javascript" src="javascripts/jquery.bxslider.js"></script>
-      <script type="text/javascript" src="javascripts/jquery.cslider.js"></script>
-      <script type="text/javascript" src="javascripts/jquery.placeholder.js"></script>
-      <script type="text/javascript" src="javascripts/jquery.inview.js"></script>
-      <!-- css3-mediaqueries.js for IE8 or older -->
-      <!--[if lt IE 9]>
-      <script src="javascripts/respond.min.js"></script>
-      <![endif]-->
-      <script type="text/javascript" src="javascripts/lessoncss.js"></script>
-	  <script type="text/javascript" src="javascripts/facialexpressionchat.js"></script>
 </body>
+
 </html>

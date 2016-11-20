@@ -1,12 +1,14 @@
 html {
-  font-family: sans-serif; /* 1 */
+  font-family: Verdana, sans-serif, sans-serif; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   -ms-text-size-adjust: 100%; /* 2 */
+  font-weight: 300;
 }
 
 body {
   margin: 0;
 }
+
 
 /* Navigation Menu - Background */
 .navigation {
@@ -111,11 +113,6 @@ body {
 
 /* Additional non-critical styles */
 
-h1, h3, p {
-  max-width: 600px;
-  margin: 0 auto 1em;
-}
-
 code {
 	padding: 2px;
 	background: #ddd;
@@ -170,8 +167,6 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
 
 section {
   height: 100vh;
-  font-size: 40px;
-  font-weight: 100;
   background-color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -324,6 +319,8 @@ section {
     -o-transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1);
 }
+
+
 
 
 
