@@ -90,14 +90,9 @@
 	<div class="row">
 	<section class="polaroid-container">
 <div class="polaroid-images"  id="polo">
+	<!--
 	<a href="" title="Cave"><img height="200" width="150" src="images/Chop.png" alt="Cave" title="Cave" /></a>
-	<a href="" title="Island"><img height="200" src="images/Chop.png" alt="Island" title="Island" /></a>
-	<a href="" title="Islands Forest"><img height="200" src="images/Chop.png" alt="Islands Forest" title="Islands Forest" /></a>
-	<a href="" title="Decking"><img height="200" src="images/Chop.png" alt="Decking" title="Decking" /></a>
-	<a href="" title="Lake"><img height="200" src="images/Chop.png" alt="Lake" title="Lake" /></a>
-	<a href="" title="Mountains"><img height="200" src="images/Chop.png" alt="Mountains" title="Mountains" /></a>
-	<a href="" title="Forest"><img height="200" src="images/Chop.png" alt="Forest" title="Forest" /></a>
-	<a href="" title="Coast Valley"><img height="200" src="images/Chop.png" alt="Coast Valley" title="Coast Valley" /></a>
+	-->
 </div>
 </section>
 
@@ -134,7 +129,8 @@
         console.log('Uploaded', snapshot.totalBytes, 'bytes.');
         console.log(snapshot.metadata);
         var url = snapshot.metadata.downloadURLs[0];
-		galleryRef.push({'url':url, 'rating':0});
+		var type = snapshot.metadata.contentType;
+		galleryRef.push({'url':url, 'rating':0, 'type':type});
         console.log('File available at', url);
 		alert("upload successful");
         // [START_EXCLUDE]
@@ -167,21 +163,29 @@
   
 <script>
 
-galleryRef.orderByChild('rating').startAt(0).limitToLast(100).on("value", function(snapshot) {
-	snapshot.forEach(function(childSnapshot) {
-     
-      // childData will be the actual contents of the child
-      var childData = childSnapshot.val();
-	  
-	  console.log(childData.url);
-	  console.log(childData.rating);
-  });
-
-
-});
 
 var polaroid = document.getElementById("polo");
-polaroid.innerHTML=polaroid.innerHTML+'<a href="" title="popo"><img height="200" src="images/Chop.png" alt="Coast Valley" title="asd" /></a>'
+galleryRef.orderByChild('rating').once('value').then(function(snapshot) {
+	snapshot.forEach(function(childSnapshot) {
+     
+        // childData will be the actual contents of the child
+        var childData = childSnapshot.val();
+		if(childData.type.includes("image")){
+			polaroid.innerHTML=polaroid.innerHTML+'<a href="" title='+childData.rating+'><img height="200" width="200"  src='+childData.url+' title='+childData.rating+' /></a>'
+
+		}
+		if(childData.type.includes("video")){
+			polaroid.innerHTML=polaroid.innerHTML+'<a href="" title='+childData.rating+'><video width="320" height="240" title='+childData.rating+' controls><source src='+childData.url+' type='+childData.type+'></video></a>'
+
+		}
+		
+	  
+  });
+});
+
+
+
+
 
 </script>
   
