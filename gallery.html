@@ -75,28 +75,43 @@
 			  <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
 				<h2 class="mdl-card__title-text">Upload your Content</h2>
 			  </div>
-			  <div class="mdl-card__supporting-text mdl-color-text--grey-600" id="messagesDiv">
-				<p>Select a file below. When it is uploaded, a link will be displayed to the uploaded file.</p>
-				<h6>Choose File</h6>
+			  <div class="mdl-card__supporting-text mdl-color-text--grey-600" id="messagesDiv" style="align-self: center; margin: 15px;">
+				
+				
+				<!--<p>Select a file below. When it is uploaded, a link will be displayed to the uploaded file.</p>-->
+				<label for="name">Name:</label>
+				<input type="text" id="name" style="width: inherit;">
+				
+				<label for="description">Description:</label>
+				<textarea rows="5" id="description" style="width: inherit;"></textarea>
+				
 				<input type="file" id="file" name="file"/>
+				<br><br>
+				<input class="btn btn-primary" type="submit" value="Submit" id="smit">
+				
+				
+				<!--
 				<h6>File URL:</h6>
 				<span id="linkbox"></span>
+				-->
 			  </div>
 			</div>
 		  </div>
 		</div>
 	</div>
-	
+				
+				
 	<div class="row">
-	<section class="polaroid-container">
-<div class="polaroid-images"  id="polo">
-	<!--
-	<a href="" title="Cave"><img height="200" width="150" src="images/Chop.png" alt="Cave" title="Cave" /></a>
-	-->
-</div>
-</section>
+		<section class="polaroid-container">
+			<div class="polaroid-images"  id="polo">
+				<!--
+				<a href="" title="Cave"><img height="200" width="150" src="images/Chop.png" alt="Cave" title="Cave" /></a>
+				-->
+				</div>
+				
+		</section>
 
-</div>
+	</div>
 	
 	
 <script>
@@ -112,12 +127,16 @@
     var auth = firebase.auth();
     var storageRef = firebase.storage().ref();
 	var galleryRef = firebase.database().ref().child("Gallery");
-    function handleFileSelect(evt) {
-      evt.stopPropagation();
-      evt.preventDefault();
-      var file = evt.target.files[0];
-
-      var metadata = {
+	
+	
+	function handlesubmit(){
+		var file = document.getElementById('file').files[0];
+		var name = document.getElementById('name').value;
+		var description = document.getElementById('description').value;
+		
+		alert(file.name);
+		
+		var metadata = {
         'contentType': file.type,
 		
       };
@@ -130,11 +149,11 @@
         console.log(snapshot.metadata);
         var url = snapshot.metadata.downloadURLs[0];
 		var type = snapshot.metadata.contentType;
-		galleryRef.push({'url':url, 'rating':0, 'type':type});
-        console.log('File available at', url);
+		galleryRef.push({'url':url, 'rating':0, 'type':type, 'name': name, 'description':description});
+        //console.log('File available at', url);
 		alert("upload successful");
         // [START_EXCLUDE]
-		document.getElementById('linkbox').innerHTML = '<a href="' +  url + '">Click For File</a>';
+		//document.getElementById('linkbox').innerHTML = '<a href="' +  url + '">Click For File</a>';
         // [END_EXCLUDE]
       }).catch(function(error) {
         // [START onfailure]
@@ -143,9 +162,12 @@
         // [END onfailure]
       });
       // [END oncomplete]
-    }
+	}
+   
     window.onload = function() {
-      document.getElementById('file').addEventListener('change', handleFileSelect, false);
+      //document.getElementById('file').addEventListener('change', handleFileSelect, false);
+	  
+	  smit.addEventListener("click", handlesubmit, false);
       document.getElementById('file').disabled = true;
       auth.onAuthStateChanged(function(user) {
         if (user) {
@@ -162,27 +184,47 @@
   
   
 <script>
-
-
+var stack=new Array();
+var asd=": ";
 var polaroid = document.getElementById("polo");
 galleryRef.orderByChild('rating').once('value').then(function(snapshot) {
 	snapshot.forEach(function(childSnapshot) {
      
         // childData will be the actual contents of the child
         var childData = childSnapshot.val();
+		var temp = childData.name + asd + childData.description;
+
 		if(childData.type.includes("image")){
-			polaroid.innerHTML=polaroid.innerHTML+'<a href="" title='+childData.rating+'><img height="200" width="200"  src='+childData.url+' title='+childData.rating+' /></a>'
+			stack.push('<div class="rox" title="'+temp+'"><a href="'+childData.url+'" ><img height="200" width="200"  src="'+childData.url+'" title="'+childData.name+'"/></a><p id="count">'+childData.rating+'</p><image src="images/star-icon.png" id="plus" style="width:40px;"/><div>');
+			//polaroid.innerHTML=polaroid.innerHTML+'<a href="" class="test" data-rating='+childData.rating+' title="asd"><img height="200" width="200"  src='+childData.url+' title='+childData.rating+' /></a>'
 
 		}
 		if(childData.type.includes("video")){
-			polaroid.innerHTML=polaroid.innerHTML+'<a href="" title='+childData.rating+'><video width="320" height="240" title='+childData.rating+' controls><source src='+childData.url+' type='+childData.type+'></video></a>'
+			stack.push('<div class="rox" title="'+temp+'" style="width:initial"><a href="" class="test" title="'+temp+'"><video width="320" height="240" title="'+temp+'" controls><source src='+childData.url+' type='+childData.type+'></video></a><p id="count">'+childData.rating+'</p><image src="images/star-icon.png" id="plus" style="width:40px;"/><div>');
+			//polaroid.innerHTML=polaroid.innerHTML+'<a href="" class="test" data-rating='+childData.rating+' title="asd"><video width="320" height="240" title='+childData.rating+' controls><source src='+childData.url+' type='+childData.type+'></video></a>'
 
 		}
 		
-	  
+		
   });
+  var max=stack.length;
+  var i;
+  for(i=0;i<max; i++){
+	polaroid.innerHTML=polaroid.innerHTML+stack.pop()
+  }
+  //alert(stack.length);
+  //alert(stack.pop());
+
 });
 
+
+
+var counter = 0;
+
+$("#plus").click(function(){
+  counter++;
+  $("#count").text(counter);
+});
 
 
 
@@ -191,6 +233,7 @@ galleryRef.orderByChild('rating').once('value').then(function(snapshot) {
   
  
 <!-- Include javascript -->
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
       <script src="javascripts/jquery.js"></script>
       <script type="text/javascript" src="javascripts/jquery.mixitup.js"></script>
       <script type="text/javascript" src="javascripts/bootstrap.js"></script>
