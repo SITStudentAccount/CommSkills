@@ -1619,7 +1619,7 @@ html input[disabled] {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1000;
+  z-index: 1050;
   top: 0;
   left: 0;
   margin-left:0%;
